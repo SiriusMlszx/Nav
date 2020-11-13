@@ -29,7 +29,7 @@ const render = () => {
                 </li>
         `).insertBefore($lastLi)
         $li.on('click', () => {
-            window.open(node.url)
+            window.open(node.url,'_self')
         })
         $li.on('click', '.close', (e) => {
             e.stopPropagation()

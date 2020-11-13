@@ -143,7 +143,7 @@ var render = function render() {
   hashMap.forEach(function (node, index) {
     var $li = $("\n        <li>\n                        <div class=\"site\">\n                            <div class=\"logo\">".concat(node.logo, "</div>\n                            <div class=\"link\">").concat(Symplifyurl(node.url), "</div>\n                            <div class='close'><svg class=\"icon\">\n                            <use xlink:href=\"#icon-cc-close-crude\"></use>\n                        </svg></div>\n                        </div>\n                </li>\n        ")).insertBefore($lastLi);
     $li.on('click', function () {
-      window.open(node.url);
+      window.open(node.url, '_self');
     });
     $li.on('click', '.close', function (e) {
       e.stopPropagation();
@@ -184,4 +184,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.ed88555d.js.map
+//# sourceMappingURL=main.1a793d29.js.map
