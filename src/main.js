@@ -3,9 +3,9 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 const hashMap = xObject || [
-    { logo: 'B', url: 'https://bilibili.com' },
-    { logo: 'G',  url: 'https://github.com' },
-    { logo: 'L',  url: 'https://lol.qq.com' }
+    {logo: 'B', url: 'https://bilibili.com'},
+    {logo: 'G', url: 'https://github.com'},
+    {logo: 'L', url: 'https://lol.qq.com'}
 ]
 
 const Symplifyurl = (url) => {
@@ -29,7 +29,7 @@ const render = () => {
                 </li>
         `).insertBefore($lastLi)
         $li.on('click', () => {
-            window.open(node.url,'_self')
+            window.open(node.url, '_self')
         })
         $li.on('click', '.close', (e) => {
             e.stopPropagation()
@@ -43,7 +43,7 @@ render()
 
 $('.addButton').on('click', () => {
     let url = window.prompt("请问你要添加的网址是啥？")
-    if (url.indexOf('http')!==0) {
+    if (url.indexOf('http') !== 0) {
         url = 'https://' + url
     }
     hashMap.push({
@@ -61,9 +61,10 @@ window.onbeforeunload = () => {
 
 $(document).on('keypress', (e) => {
     const key = e.key
-    for (let i = 0; i < hashMap.length; i++){
-        if (hashMap[i].logo.toLowerCase() === key){
+    for (let i = 0; i < hashMap.length; i++) {
+        if (hashMap[i].logo.toLowerCase() === key) {
             window.open(hashMap[i].url)
         }
     }
 })
+
